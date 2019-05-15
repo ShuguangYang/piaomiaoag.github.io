@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shuguangyang.github.io/"/>
-  <updated>2019-05-15T11:54:48.177Z</updated>
+  <updated>2019-05-15T12:21:11.193Z</updated>
   <id>http://shuguangyang.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://shuguangyang.github.io/2019/05/15/%E5%88%A9%E7%94%A8github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
     <id>http://shuguangyang.github.io/2019/05/15/利用github搭建自己的博客/</id>
     <published>2019-05-15T08:12:45.000Z</published>
-    <updated>2019-05-15T11:54:48.177Z</updated>
+    <updated>2019-05-15T12:21:11.193Z</updated>
     
     <summary type="html">
     
@@ -33,30 +33,10 @@
     
     </summary>
     
+      <category term="hexo" scheme="http://shuguangyang.github.io/categories/hexo/"/>
+    
     
       <category term="web" scheme="http://shuguangyang.github.io/tags/web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://shuguangyang.github.io/2019/05/10/hello-world/"/>
-    <id>http://shuguangyang.github.io/2019/05/10/hello-world/</id>
-    <published>2019-05-10T13:23:44.291Z</published>
-    <updated>2019-05-10T13:23:44.291Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -65,7 +45,7 @@
     <link href="http://shuguangyang.github.io/2018/06/29/%E5%BC%80%E5%90%AF%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/"/>
     <id>http://shuguangyang.github.io/2018/06/29/开启新的篇章/</id>
     <published>2018-06-29T04:05:21.000Z</published>
-    <updated>2019-05-15T07:15:38.835Z</updated>
+    <updated>2019-05-15T12:53:41.546Z</updated>
     
     <summary type="html">
     
@@ -83,32 +63,9 @@
       <category term="生活" scheme="http://shuguangyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="tag1" scheme="http://shuguangyang.github.io/tags/tag1/"/>
+      <category term="日记" scheme="http://shuguangyang.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
     
-      <category term="tag2" scheme="http://shuguangyang.github.io/tags/tag2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo和GitHub免费搭建个人博客</title>
-    <link href="http://shuguangyang.github.io/2018/05/15/Hexo%E5%92%8CGitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://shuguangyang.github.io/2018/05/15/Hexo和GitHub免费搭建个人博客/</id>
-    <published>2018-05-15T11:25:10.000Z</published>
-    <updated>2019-05-15T11:36:52.906Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;1-环境配置&quot;&gt;&lt;a href=&quot;#1-环境配置&quot; class=&quot;headerlink&quot; title=&quot;1.环境配置&quot;&gt;&lt;/a&gt;1.环境配置&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;安装&lt;a href=&quot;http://https://nodejs.org/en/&quot; title=&quot;nodejs下载地址&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;node.js&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;安装&lt;a href=&quot;http://https://gitforwindows.org/&quot; title=&quot;git下载地址&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitForWindows&lt;/a&gt;，没有的同学在这一部还要注册&lt;a href=&quot;http://https://github.com/&quot; title=&quot;github官网&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;。&lt;img src=&quot;/2018/05/15/Hexo和GitHub免费搭建个人博客/2018/05/15/Hexo和GitHub免费搭建个人博客/1.png&quot;&gt;&lt;/li&gt;
-&lt;li&gt;安装Hexo。打开命令终端，输入&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;安装，安装完成后，检查是否成功&lt;code&gt;hexo version&lt;/code&gt;。&lt;img src=&quot;/2018/05/15/Hexo和GitHub免费搭建个人博客/2018/05/15/Hexo和GitHub免费搭建个人博客/2.png&quot;&gt;&lt;/li&gt;
-&lt;li&gt;使用hexo初始化一个项目，选择一个文件夹，用来存放博客项目。&lt;img src=&quot;/2018/05/15/Hexo和GitHub免费搭建个人博客/2018/05/15/Hexo和GitHub免费搭建个人博客/3.png&quot;&gt;
-之后会弹出一个git命令窗口，输入&lt;code&gt;hexo init 你自己的项目名称&lt;/code&gt;（我的是MyBlog），运行结束后会出现自己的项目文件夹，然后输入&lt;code&gt;cd 你自己的项目名称&lt;/code&gt;进入到该项目文件目录下，最后输入&lt;code&gt;npm install&lt;/code&gt;命令。&lt;/li&gt;&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="web" scheme="http://shuguangyang.github.io/tags/web/"/>
+      <category term="记叙" scheme="http://shuguangyang.github.io/tags/%E8%AE%B0%E5%8F%99/"/>
     
   </entry>
   
