@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Tag: 日记 | 飘渺阿光 - 阿光的博客</title>
+    <title>Java的垃圾回收机制 | 飘渺阿光 - 阿光的博客</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN" data-spy="scroll" data-target=".list-group">
     
@@ -175,21 +175,99 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag page">
-  <h1 class="page-title">日记</h1>
+<div id="post" class="page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/29/开启新的篇章/" itemprop="url">开启新的篇章</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-29T12:05:21+08:00">06-29</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://shuguangyang.github.io/2019/04/15/Java的垃圾回收机制/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="飘渺阿光">
+       <meta itemprop="description" content="秃头码农">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="飘渺阿光">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Java的垃圾回收机制</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-15T21:18:09+08:00">2019-04-15 21:18:09</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+        </span>
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="Java的垃圾回收机制"><a href="#Java的垃圾回收机制" class="headerlink" title="Java的垃圾回收机制"></a>Java的垃圾回收机制</h1><ol>
+<li>Java的垃圾回收机制，使得Java程序员在编写程序的时候不再考虑内存管理。垃圾回收器通常是作为一个单独的低级别的线程运行，不可预知的情况下对内存堆中已经死亡或者长时间没有使用的对象进行清除和回收。</li>
+<li>垃圾回收涉及到两种做法：引用计数法和可达性分析算法。这里还涉及到java的4种引用方式：强引用，软引用，弱引用和虚引用。其中引用强度越来越低，也就意味着引用弱的对象越容易被垃圾回收。<h1 id="JVM的内存模型"><a href="#JVM的内存模型" class="headerlink" title="JVM的内存模型"></a>JVM的内存模型</h1></li>
+<li>Java程序内存的分配是在JVM虚拟机内存分配机制下完成，保证了Java程序在各种平台下对内存的访问都能保证效果一致的机制及规范。Java数据区域分为五大数据区域。这些区域各有各的用途，创建及销毁时间。其中方法区和堆是所有线程共享的，栈，本地方法栈和程序虚拟机则为线程私有的。程序计数器是一块很小的内存空间，它是线程私有的，可以认作为当前线程的行号指示器。<br><img src="/2019/04/15/Java的垃圾回收机制/1.png" alt></li>
+<li>Java利用多线程机制使得多个任务能够同时执行处理，所有的线程共享JVM内存区域，而且每个线程又单独的有自己的工作内存，当线程与内存区域进行交互时，数据从主存拷贝到工作内存，进而交由线程处理。<h1 id="分代的垃圾回收策略"><a href="#分代的垃圾回收策略" class="headerlink" title="分代的垃圾回收策略"></a>分代的垃圾回收策略</h1></li>
+<li>新生代（Young Generation）。所有新生成的对象首先都是放在年轻代的。年轻代的目标就是尽可能快速的收集那些生命周期短的对象。新生代内存按照8:1:1的比例分为一个eden区和两个survivor(survivor0,survivor1)区。一个Eden区，两个 Survivor区(一般而言)。大部分对象在Eden区中生成。回收时先将eden区存活对象复制到一个survivor0区，然后清空eden区，当这个survivor0区也存放满了时，则将eden区和survivor0区存活对象复制到另一个survivor1区，然后清空eden和这个survivor0区，此时survivor0区是空的，然后将survivor0区和survivor1区交换，即保持survivor1区为空， 如此往复。NewSize和MaxNewSize分别可以控制新生代的初始大小和最大的大小。</li>
+<li>老年代（Old Generation）。在年轻代中经历了N次垃圾回收后仍然存活的对象，就会被放到年老代中。因此，可以认为年老代中存放的都是一些生命周期较长的对象。内存比新生代也大很多(大概比例是1:2)，当老年代内存满时触发Major GC即Full GC，Full GC发生频率比较低，老年代对象存活时间比较长，存活率标记高。当survivor1区不足以存放 eden和survivor0的存活对象时，就将存活对象直接存放到老年代。若是老年代也满了就会触发一次Full GC，也就是新生代、老年代都进行回收。</li>
+<li>持久代（Permanent Generation）。用于存放静态文件，如Java类、方法等。持久代对垃圾回收没有显著影响，但是有些应用可能动态生成或者调用一些class，例如Hibernate 等，在这种时候需要设置一个比较大的持久代空间来存放这些运行过程中新增的类。<br><img src="/2019/04/15/Java的垃圾回收机制/2.png" alt></li>
+</ol>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/jvm/" rel="tag"><i class="fas fa-tags"></i>jvm</a>
+        
+      </div>
+      
+    </footer>
   </article>
+  
+  
+<div class="reward" id="reward">
+  <p>谢谢您的支持！</p>
+  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="WechatPay">
+      <span>WechatPay</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="AliPay">
+      <span>AliPay</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/06/29/开启新的篇章/" rel="next" title="开启新的篇章"><i class="fas fa-angle-left"></i><span class="nav-title">开启新的篇章</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/05/15/利用github搭建自己的博客/" rel="prev" title="利用github搭建自己的博客"><span class="nav-title">利用github搭建自己的博客</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
   
   
 </div>
@@ -236,6 +314,17 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Java的垃圾回收机制"><span class="toc-text">Java的垃圾回收机制</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JVM的内存模型"><span class="toc-text">JVM的内存模型</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#分代的垃圾回收策略"><span class="toc-text">分代的垃圾回收策略</span></a></li></ol></div>
+    </div>
+    
     
     
     <hr>
