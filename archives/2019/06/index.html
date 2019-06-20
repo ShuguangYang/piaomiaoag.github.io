@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>利用github搭建自己的博客 | 飘渺阿光 - 阿光的博客</title>
+    <title>Archive | 飘渺阿光 - 阿光的博客</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN" data-spy="scroll" data-target=".list-group">
     
@@ -175,117 +175,34 @@
         <div class="main-container">
           <div class="content">
             
-<div id="post" class="page">
+<div id="archive" class="archive page">
+  <h1 class="page-title">Archive</h1>
+  <h2 class="page-counter">
+    
+    You have 4 posts!
+    
+  </h2>
+  
+  
+  
+  
+  <h2 class="page-title">2019
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://shuguangyang.github.io/2019/05/15/利用github搭建自己的博客/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="飘渺阿光">
-       <meta itemprop="description" content="秃头码农">
-       <meta itemprop="image" content="/images/avatar.png">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/06/09/Java面经记录/" itemprop="url">Java面经记录</a>
+      </h1>
+      
+      <span class="post-date">
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-09T10:11:20+08:00">06-09</time>
       </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="飘渺阿光">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">利用github搭建自己的博客</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-15T16:12:45+08:00">2019-05-15 16:12:45</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-        </span>
-        
-        
-      </div>
+      
     </header>
-    <main class="post-main" itemprop="articleBody">
-      <h1 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1.环境配置"></a>1.环境配置</h1><ol>
-<li>安装<a href="http://https://nodejs.org/en/" title="nodejs下载地址" target="_blank" rel="noopener">node.js</a>。</li>
-<li>安装<a href="http://https://gitforwindows.org/" title="git下载地址" target="_blank" rel="noopener">GitForWindows</a>，没有的同学在这一部还要注册<a href="http://https://github.com/" title="github官网" target="_blank" rel="noopener">github</a>。<br><img src="/2019/05/15/利用github搭建自己的博客/1.png" alt></li>
-<li>安装Hexo。打开命令终端，输入<code>npm install -g hexo-cli</code>安装，安装完成后，检查是否成功<code>hexo version</code>。<br><img src="/2019/05/15/利用github搭建自己的博客/2.png" alt></li>
-<li>使用hexo初始化一个项目，选择一个文件夹，用来存放博客项目。<br><img src="/2019/05/15/利用github搭建自己的博客/3.png" alt><br>之后会弹出一个git命令窗口，输入<code>hexo init 你自己的项目名称</code>（我的是MyBlog），运行结束后会出现自己的项目文件夹，然后输入<code>cd 你自己的项目名称</code>进入到该项目文件目录下，最后输入<code>npm install</code>命令。<a id="more"></a>
-<h1 id="2-创建项目"><a href="#2-创建项目" class="headerlink" title="2.创建项目"></a>2.创建项目</h1></li>
-<li>在上述git窗口继续执行命令<code>hexo g</code>，以后每次更新博客都需要执行此命令。<br><img src="/2019/05/15/利用github搭建自己的博客/4.png" alt></li>
-<li>接下来执行<code>hexo s</code>，打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>查看结果。<br><img src="/2019/05/15/利用github搭建自己的博客/5.png" alt></li>
-<li>页面可以访问，并且显示首页，博客项目就已经创建好了。<br><img src="/2019/05/15/利用github搭建自己的博客/6.png" alt><h1 id="3-部署到github"><a href="#3-部署到github" class="headerlink" title="3.部署到github"></a>3.部署到github</h1></li>
-<li>登陆github账号创建一个新的仓库。<br><img src="/2019/05/15/利用github搭建自己的博客/7.png" alt></li>
-<li>创建格式必须为用户名.github.io。<br><img src="/2019/05/15/利用github搭建自己的博客/8.png" alt></li>
-<li>创建好以后进入设置界面，滑动到仓库设置界面的最底部，找到“GitHub Pages”选项，点击“Choose a theme”。<br><img src="/2019/05/15/利用github搭建自己的博客/9.png" alt></li>
-<li>选择一个主题，应用即可，这里用Chrome浏览器设置，其他浏览器可能还会有问题。</li>
-<li>在git窗口执行命令<code>ssh-keygen</code>,一路回车确定，执行完毕后，会在 “ c://Users/用户名/.ssh 文件夹下 ”生成两个文件，分别是： id_rsa 和 id_rsa.pub。</li>
-<li>用记事本打开 idrsa.pub 文件，复制里面的所有内容。打开 github，点击设置，进入SSH and GPG keys页面。点击 NEW SSH key 进入SSH key添加界面。其中：title任意填，key填入刚刚我们复制的id_rsa.pub的内容，最后点击 Add SSH key 完成添加。<br><img src="/2019/05/15/利用github搭建自己的博客/10.png" alt></li>
-<li>进入项目文件夹，找到“ _config.yml ” 配置文件，在文件最后找到deploy,修改代码。(注意，冒号后面要加空格)<pre class="prettyprint lang-javascript">
-deploy:
-type: git  
-repo: git@github.com:ShuguangYangshugangyang.github.io.git  
-branch: master
-</pre>  </li>
-<li>在gitbash命令终端，执行命令<code>hexo d -g</code>,提示输入密码的话，直接回车。</li>
-<li>最后访问网址：https://你的GitHub用户名.github.io 就可以看到我们的网址啦！</li>
-</ol>
-
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/web/" rel="tag"><i class="fas fa-tags"></i>web</a>
-        
-      </div>
-      
-    </footer>
   </article>
   
   
-<div class="reward" id="reward">
-  <p>谢谢您的支持！</p>
-  <button id="reward-button" class="button" disable="enable">Reward</button>
-  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
-    
-    <div id="wechat">
-      <img id="wechat_qr" src="/images/WeChatPay.png" alt="WechatPay">
-      <span>WechatPay</span>
-    </div>
-    
-    
-    <div id="alipay">
-      <img id="alipay_qr" src="/images/AliPay.png" alt="AliPay">
-      <span>AliPay</span>
-    </div>
-    
-    
-  </div>
-</div>
-
-
-  
-  
-  <nav class="page-nav">
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2019/04/15/Java的垃圾回收机制/" rel="next" title="Java的垃圾回收机制"><i class="fas fa-angle-left"></i><span class="nav-title">Java的垃圾回收机制</span></a>
-      
-    </div>
-    <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/06/09/Java面经记录/" rel="prev" title="Java面经记录"><span class="nav-title">Java面经记录</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
-  </nav>
-  
-  
-</div>
+</h2></div>
 
           </div>
           
@@ -329,17 +246,6 @@ branch: master
 
 
   <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#1-环境配置"><span class="toc-text">1.环境配置</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#2-创建项目"><span class="toc-text">2.创建项目</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#3-部署到github"><span class="toc-text">3.部署到github</span></a></li></ol></div>
-    </div>
-    
     
     
     <hr>

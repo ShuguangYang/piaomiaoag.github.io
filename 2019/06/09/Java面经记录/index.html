@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>利用github搭建自己的博客 | 飘渺阿光 - 阿光的博客</title>
+    <title>Java面经记录 | 飘渺阿光 - 阿光的博客</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN" data-spy="scroll" data-target=".list-group">
     
@@ -179,7 +179,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://shuguangyang.github.io/2019/05/15/利用github搭建自己的博客/">
+      <link itemprop="mainEntityOfPage" href="http://shuguangyang.github.io/2019/06/09/Java面经记录/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="飘渺阿光">
        <meta itemprop="description" content="秃头码农">
@@ -190,57 +190,33 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">利用github搭建自己的博客</h1>
+      <h1 class="post-title" itemprop="name headline">Java面经记录</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-15T16:12:45+08:00">2019-05-15 16:12:45</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-09T10:11:20+08:00">2019-06-09 10:11:20</time></span>
         </span>
         
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-        </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1.环境配置"></a>1.环境配置</h1><ol>
-<li>安装<a href="http://https://nodejs.org/en/" title="nodejs下载地址" target="_blank" rel="noopener">node.js</a>。</li>
-<li>安装<a href="http://https://gitforwindows.org/" title="git下载地址" target="_blank" rel="noopener">GitForWindows</a>，没有的同学在这一部还要注册<a href="http://https://github.com/" title="github官网" target="_blank" rel="noopener">github</a>。<br><img src="/2019/05/15/利用github搭建自己的博客/1.png" alt></li>
-<li>安装Hexo。打开命令终端，输入<code>npm install -g hexo-cli</code>安装，安装完成后，检查是否成功<code>hexo version</code>。<br><img src="/2019/05/15/利用github搭建自己的博客/2.png" alt></li>
-<li>使用hexo初始化一个项目，选择一个文件夹，用来存放博客项目。<br><img src="/2019/05/15/利用github搭建自己的博客/3.png" alt><br>之后会弹出一个git命令窗口，输入<code>hexo init 你自己的项目名称</code>（我的是MyBlog），运行结束后会出现自己的项目文件夹，然后输入<code>cd 你自己的项目名称</code>进入到该项目文件目录下，最后输入<code>npm install</code>命令。<a id="more"></a>
-<h1 id="2-创建项目"><a href="#2-创建项目" class="headerlink" title="2.创建项目"></a>2.创建项目</h1></li>
-<li>在上述git窗口继续执行命令<code>hexo g</code>，以后每次更新博客都需要执行此命令。<br><img src="/2019/05/15/利用github搭建自己的博客/4.png" alt></li>
-<li>接下来执行<code>hexo s</code>，打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>查看结果。<br><img src="/2019/05/15/利用github搭建自己的博客/5.png" alt></li>
-<li>页面可以访问，并且显示首页，博客项目就已经创建好了。<br><img src="/2019/05/15/利用github搭建自己的博客/6.png" alt><h1 id="3-部署到github"><a href="#3-部署到github" class="headerlink" title="3.部署到github"></a>3.部署到github</h1></li>
-<li>登陆github账号创建一个新的仓库。<br><img src="/2019/05/15/利用github搭建自己的博客/7.png" alt></li>
-<li>创建格式必须为用户名.github.io。<br><img src="/2019/05/15/利用github搭建自己的博客/8.png" alt></li>
-<li>创建好以后进入设置界面，滑动到仓库设置界面的最底部，找到“GitHub Pages”选项，点击“Choose a theme”。<br><img src="/2019/05/15/利用github搭建自己的博客/9.png" alt></li>
-<li>选择一个主题，应用即可，这里用Chrome浏览器设置，其他浏览器可能还会有问题。</li>
-<li>在git窗口执行命令<code>ssh-keygen</code>,一路回车确定，执行完毕后，会在 “ c://Users/用户名/.ssh 文件夹下 ”生成两个文件，分别是： id_rsa 和 id_rsa.pub。</li>
-<li>用记事本打开 idrsa.pub 文件，复制里面的所有内容。打开 github，点击设置，进入SSH and GPG keys页面。点击 NEW SSH key 进入SSH key添加界面。其中：title任意填，key填入刚刚我们复制的id_rsa.pub的内容，最后点击 Add SSH key 完成添加。<br><img src="/2019/05/15/利用github搭建自己的博客/10.png" alt></li>
-<li>进入项目文件夹，找到“ _config.yml ” 配置文件，在文件最后找到deploy,修改代码。(注意，冒号后面要加空格)<pre class="prettyprint lang-javascript">
-deploy:
-type: git  
-repo: git@github.com:ShuguangYangshugangyang.github.io.git  
-branch: master
-</pre>  </li>
-<li>在gitbash命令终端，执行命令<code>hexo d -g</code>,提示输入密码的话，直接回车。</li>
-<li>最后访问网址：https://你的GitHub用户名.github.io 就可以看到我们的网址啦！</li>
-</ol>
+      <p>#Java如何进行异常处理#<br>java通过面向对象的方法进行异常处理，把各种不同的异常进行分类，并且提供了良好的接口。通过5个关键词：try、catch、throw、throws和finally来实现异常处理。每个异常都是一个对象，它是Throwable类或其他子类的实例。其中try用来执行一段程序，如果出现异常，系统就是抛出一个异常，catch通过异常类型来捕捉它，throw语句用来明确抛出一个异常，throws用来标明一个成员函数可能抛出的各种“异常”，finally是不管发生什么异常都会被执行的一段代码。</p>
+<p>#Static Nested Class和Inner Class的区别#<br>Static Nested Class是被声明为静态（static）的内部类，它可以不依赖外部类实例被实例化。而通常的内部类需要在外部类实例化后才能实例化。Static-Nested Class 的成员，既可以定义为静态的(static)，也可以定义为动态的(instance)。Nested Class的静态成员(Method)只能对Outer Class的静态成员(static memebr)进行操作(ACCESS)，而不能Access Outer Class的动态成员(instance member)。而 Nested Class的动态成员(instance method) 却可以 Access Outer Class的所有成员，这个概念很重要，许多人对这个概念模糊。有一个普通的原则， 因为静态方法(static method) 总是跟 CLASS 相关联(bind CLASS)， 而动态方法( (instance method) 总是跟 instance object 相关联, 所以，静态方法(static method)永远不可以Access跟 object 相关的动态成员(instance member)，反过来就可以，一个CLASS的 instance object 可以 Access 这个 Class 的任何成员，包括静态成员(static member)。</p>
+<p>#abstract class和interface的区别#<br>抽象类（abstract class）就是声明方法的存在而不去实现它的类，用于要创建一个体现某些基本行为的类，并为该类声明方法，但不能在该类中实现该类的情况。不能创建abstract 类的实例。然而可以创建一个变量，其类型是一个抽象类，并让它指向具体子类的一个实例。不能有抽象构造函数或抽象静态方法。Abstract 类的子类为它们父类中的所有抽象方法提供实现。<br>接口（interface）是抽象类的变体。在接口中，所有方法都是抽象的。多继承性可通过实现这样的接口而获得。接口中的所有方法都是抽象的，没有一个有程序体。接口只可以定义static final成员变量。接口的实现与子类相似，除了该实现类不能从接口定义中继承行为。当类实现特殊接口时，它定义（即将程序体给予）所有这种接口的方法。然后，它可以在实现了该接口的类的任何对象上调用接口的方法。由于有抽象类，它允许使用接口名作为引用变量的类型。通常的动态联编将生效。引用可以转换到接口类型或从接口类型转换，instanceof 运算符可以用来决定某对象的类是否实现了接口。</p>
+<p>#Overload和Override的区别#<br>Overload是一个类中定义了多个同名方法，它们有不同的参数个数或者有不同的参数类型，Overload的方法是可以改变返回值的类型。Override是方法的重写，子类中定义某方法与父类中有相同名称和参数。子类的对象使用这个方法时，将调用子类中的定义，对它而言，父类中的定义如同被“屏蔽”了。</p>
+<p>#JAVA面向对象的特征#<br>抽象、继承、封装、多态。</p>
+<p>#Comparable和Comparator接口区别<br>Java提供了只包含一个compareTo()方法的Comparable接口。这个方法可以个给两个对象排序。具体来说，输入对象小于，等于，大于已经存在的对象则分别返回负数，0，正数。<br>Java提供了包含compare()和equals()两个方法的Comparator接口。compare()方法用来给两个输入参数排序，返回负数，0，正数表明第一个参数是小于，等于，大于第二个参数。equals()方法需要一个对象作为参数，它用来决定输入参数是否和comparator相等。只有当输入参数也是一个comparator并且输入参数和当前comparator的排序结果是相同的时候，这个方法才返回true。</p>
+<p>#类加载机制，双亲委派模型#<br>某个特定的类加载器在接到加载类的请求时，首先将加载任务委托给父类加载器，依次递归，如果父类加载器可以完成类加载任务，就成功返回；只有父类加载器无法完成此加载任务时，才自己去加载。使用双亲委派模型的好处在于Java类随着它的类加载器一起具备了一种带有优先级的层次关系。</p>
+<p>#String为什么不可变#<br>不可变对象是指一个对象的状态在对象被创建之后就不再变化。不可改变的意思就是说：不能改变对象内的成员变量，包括基本数据类型的值不能改变，引用类型的变量不能指向其他的对象，引用类型指向的对象的状态也不能改变。String 不可变是因为在 JDK 中 String 类被声明为一个 final 类，且类内部的 value 字节数组也是 final 的，只有当字符串是不可变时字符串池才有可能实现，字符串池的实现可以在运行时节约很多 heap 空间，因为不同的字符串变量都指向池中的同一个字符串；如果字符串是可变的则会引起很严重的安全问题，譬如数据库的用户名密码都是以字符串的形式传入来获得数据库的连接，或者在 socket 编程中主机名和端口都是以字符串的形式传入，因为字符串是不可变的，所以它的值是不可改变的，否则黑客们可以钻到空子改变字符串指向的对象的值造成安全漏洞；因为字符串是不可变的，所以是多线程安全的，同一个字符串实例可以被多个线程共享，这样便不用因为线程安全问题而使用同步，字符串自己便是线程安全的；因为字符串是不可变的所以在它创建的时候 hashcode 就被缓存了，不变性也保证了 hash 码的唯一性，不需要重新计算，这就使得字符串很适合作为 Map 的键，字符串的处理速度要快过其它的键对象，这就是 HashMap 中的键往往都使用字符串的原因。</p>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/web/" rel="tag"><i class="fas fa-tags"></i>web</a>
+        <a class="post-tag button" href="/tags/JAVA/" rel="tag"><i class="fas fa-tags"></i>JAVA</a>
         
       </div>
       
@@ -274,12 +250,10 @@ branch: master
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/04/15/Java的垃圾回收机制/" rel="next" title="Java的垃圾回收机制"><i class="fas fa-angle-left"></i><span class="nav-title">Java的垃圾回收机制</span></a>
+      <a href="/2019/05/15/利用github搭建自己的博客/" rel="next" title="利用github搭建自己的博客"><i class="fas fa-angle-left"></i><span class="nav-title">利用github搭建自己的博客</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/06/09/Java面经记录/" rel="prev" title="Java面经记录"><span class="nav-title">Java面经记录</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -333,12 +307,6 @@ branch: master
     
     
     
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#1-环境配置"><span class="toc-text">1.环境配置</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#2-创建项目"><span class="toc-text">2.创建项目</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#3-部署到github"><span class="toc-text">3.部署到github</span></a></li></ol></div>
-    </div>
     
     
     
